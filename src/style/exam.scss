@@ -1,0 +1,406 @@
+*{//-------- 1------------
+    padding: 0;
+    margin: 0;
+}
+
+body, html{
+    //height: calc(100% - 30px); //eto bez navBar
+    background-color:rgb(196, 235, 240); 
+}
+
+//body
+section
+{
+    height: calc(100% - 30px);
+    padding: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    //background-color: rgb(172, 201, 143);
+}
+
+.main-container{    
+    width: 200px;
+    height: 200px;
+    //padding: 5rem;   
+    border-style: dotted;
+}
+.buttons-container{
+    display: flex;
+    flex-wrap: wrap;   
+    height: 100%;
+}
+
+button{
+    width: 25%;   
+   // height: 20px;
+}
+
+//-------TO DO List-----------------
+.todo {    
+   width: 40%;     
+   margin: 0 90px;   
+      h3 {
+         font-size: 40px;  
+         background-color: white;
+         padding:20px 30px;
+         border: 2px solid salmon;
+         border-top-left-radius: 25px;
+         border-top-right-radius: 25px;  
+         text-align: center;
+         position: relative;
+         font-family: 'Taviraj', serif;
+   } 
+   ol {
+      border: 2px solid salmon; 
+      margin-top: 0;
+      list-style: lower-roman;
+      list-style-position: inside;
+      padding: 5px;
+      border-bottom-left-radius: 25px;
+      border-bottom-right-radius: 25px;
+
+      li {
+         font-size: 20px;  
+         padding: 6px;  
+         font-family: 'Taviraj', serif;  
+     }
+   }
+}
+
+img {
+   height: 30px;
+   width: 30px;     
+}
+
+h3 img {
+   position: absolute;
+   top: 5px;
+   right: 6px;
+}  
+
+.todo ol li:hover, .todo h3:hover {
+   background-color: white;
+   color:red;
+}
+
+//------------------------
+
+.section_logo .logo img {    
+    height: 52px;
+    width: 100%; 
+    opacity: 2.8; 
+    margin: 0 0 10px 0;
+}
+
+/* Section Inner */
+div .section_main_menu {
+ max-width: 1100px;
+ padding: 0 20px;
+ margin: 0 auto;
+}  
+
+/* Navigation */
+// Hide the checkbox and label
+#dws-menu, header label {
+display: none;
+}
+
+header nav, header .leb-menu {
+background-color: #04948c;
+}
+
+.menu {   
+  z-index: 100; 
+  display: flex;    
+  justify-content: space-between;  // straightens elements along line X
+  align-items: center;  // straightens elements along line y
+    .section_logo .logo {
+    height: 50px;
+    width: 50px;      
+    } 
+
+       .section_main_menu ul {
+          margin: 0;
+          list-style: none;
+          padding: 0;
+          display: flex;
+          justify-content: center;
+
+             li:hover {
+                background: rgba(0,0,0,0.3);
+             }
+
+             li a {
+                display: block;
+                padding: 15px 15px;
+                color:  #fff;
+                text-decoration: none;
+                text-transform: uppercase;
+                font-size: 16px;
+             }               
+          }        
+
+          .section_social_networks {
+             background-color:  #04948c;
+             box-sizing: border-box;
+             height: 100%;        
+             display: flex; 
+             align-items: center;
+             gap: 10px;      
+             padding: 10px;              
+             border-left: 1px solid white;    
+
+                button {
+                   border: none;            
+                   //border: 1px solid  black;
+                   background-color: white;                  
+                   padding:0;
+                   width: 25px;
+                   height: 25px;                   
+
+                   img {
+                      width: 25px;
+                      height: 25px;
+                      transition: all 2.5s linear;                        
+                      &:hover {                        
+                         cursor: pointer;
+                         opacity: 0.5;
+                         scale: 125%;                          
+                      }
+                   }
+             }
+       }
+}
+
+// .banner {
+//  text-align: center;
+//  width: 100%;
+//  height: 100px;
+//  overflow: hidden;      
+//     .img_banner {      
+//        width: 1500px;
+//        height: 100px;
+//        margin: 1px auto;
+//     }
+// }
+
+// .about {      
+//  width: 300px;    
+//  border-radius: 20px;
+//  border:  1px solid #04948c;  
+
+//  font-family: 'calibri', serif;  
+//  font-size: 20px;
+//  text-shadow: 4px 4px 4px #aaa; 
+
+//  color:  #04948c;
+//  text-decoration: none;
+//  background-color: whitesmoke;  
+//  text-align: center;      
+// } 
+
+// .parfume_description {
+//  margin-top: 16px;
+//  padding: 0;
+//  width: 0px;    
+//  height: 0;   
+//  font-size: 0px;
+//  color:  #042e2c;
+//  text-decoration: none;
+//  background-color:#FFE5B4;  
+//  text-align: center;       
+//  opacity: 0;
+//  transition: 2s;    
+// }
+
+// .bottom_div {   
+//  margin: 0 auto;
+//  width: 30%;
+//  justify-content: center;
+
+//  .top_div {  
+//     background: #04948c;
+//     color:white;        
+//     text-align: center;
+//     margin: 5px auto;  
+
+//     .h3top_div {
+//        padding-top: 3px;
+//        padding-bottom: 4px;
+//        font-size: 12px;
+//        font-family: Helvetica, Arial, sans-serif;
+//        text-transform: uppercase;
+//     }
+//  }
+
+//   .form_fields {
+//      margin: 0 auto;            
+//      width: 300px; 
+//  }       
+// }  
+
+
+/*===== MEDIA ======*/
+header label:hover {
+cursor: pointer;
+background: rgba(0,0,0,0.3);
+}   
+
+// .gallery {
+// display: flex;
+// flex-direction: column;
+// margin: 0 auto;     
+// gap: 10px; 
+
+//        .row {        
+//           gap: 250px;         
+//           margin: 0 auto;
+
+//              .div_parfume_img  {   
+//                 display: inline-block;    
+//                 justify-content: space-around;       
+//                 margin: 50px;  
+
+//                 img {           
+//                    width: 300px;
+//                    height: 300px;   
+//                    border-radius: 20px;
+//                    border: 1px solid #04948c;        
+//                    cursor: pointer;             
+//                    transition: all 2.5s linear; 
+//                    &:hover { // the same as img:hover
+//                          opacity: .5; 
+//                          scale: 110%; 
+//                          border-radius: 60px;
+//                          border: 1px solid #940404; 
+
+//                                ~.parfume_description  {                                 
+//                                      opacity: 1;
+//                                      transition: 2s;                                    
+
+//                                      margin-top: 16px;                                     
+//                                      width: 300px;  
+//                                      height: auto;                                      
+//                                      border-radius: 20px;
+//                                      border:  2px solid #04948c;  
+                               
+//                                      font-family: 'calibri', serif;  
+//                                      font-size: 18px;                                   
+//                                      color:  black;
+//                                      text-decoration: none;
+//                                      background-color: #f3ecdf;  
+//                                      text-align: center;                                                                      
+//                                }        
+//                            }
+//                     }
+//                 }               
+//        }
+// }
+
+
+@media all and (max-width: 980px) {
+ header label {
+    display: block;
+    width: 30px;
+    height: 30px;
+    padding: 10px;
+    border-right: 1px solid #fff;
+ }
+
+ #dws-menu:checked ~ .menu {
+    margin: 0px;   
+    .section_social_networks{
+          border-top: 1px solid white;
+       }        
+ } 
+
+ .menu {
+    display: block; 
+    position: absolute;
+    width: 200px;
+    margin-left: -200px;
+    transition: all 0.5s;
+
+       .section_logo .logo {
+          display: none; 
+       }      
+
+          .section_main_menu {
+             padding: 0;
+
+                ul {
+                   flex-direction: column;
+
+                   li {
+                      border-top: 1px solid #fff;
+
+                         a {
+                            font-size: 14px;
+                            padding: 15px 10px;
+                         }                      
+                   }
+                }                   
+          }
+
+          .section_social_networks {  
+             justify-content: space-around;     
+        }                            
+      
+}    
+
+// .gallery .row {
+//  margin: 0 10px;
+//  gap: 0px;
+
+//     .div_parfume_img {    
+//        width: auto;
+//        margin: 0 25px;       
+//      }  
+// }   
+}
+
+@media all and (max-width: 800px) {
+ .menu {
+    display: block;         
+ }
+
+ .hide-mobile {
+    display: none;
+ }  
+
+//  .gallery .row {
+//     margin: 0;
+//     gap: 0px;
+
+//        .div_parfume_img {           
+//           margin: 0 25px; 
+//           width: auto;        
+//         }
+//  }
+}
+
+ @media all and (max-width: 650px) {  //small monitor
+ .menu {
+    display: block;   
+ }  
+
+ .hide-mobile {
+    display: none;
+ }
+
+//  .gallery{
+//     align-items: center;
+//      .row {
+//        margin: 0 55px;
+//        gap: 0px;      
+//      }  
+//   }  
+ 
+//  .bottom_div {   
+//     margin: 0 auto;
+//     width: 50%;
+//  }
+}
+
+
