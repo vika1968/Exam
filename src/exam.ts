@@ -1,2 +1,3 @@
-console.dir()
+console.dir
+console.log("safsafasfasf")
 

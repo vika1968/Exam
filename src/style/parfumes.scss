@@ -1,0 +1,128 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html, body{ 
+    height: 100%;
+}
+
+body{
+    align-items: center;
+    background-color: rgb(242, 232, 211);
+}
+
+h1 {
+    padding-top: 30px;
+    text-align: center;
+    color: rgb(89, 63, 6);
+}
+
+.gallery-container{
+    padding: 5rem;    
+}
+
+.row1{
+    float:left;
+    width: 45%;
+     border-color: black;
+    border-style: double;  
+    }  
+
+.row2{
+    float:right;
+    width: 45%;
+    display: block;
+    border-color: black;
+    border-style: double;
+    height: 822px;        
+}
+
+
+.gallery-container .row1{
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+    justify-content: space-between;
+    flex-flow: row wrap;   
+}
+
+
+.gallery-container #box1 .div_parfume_img{  
+   width: 33%; 
+   object-fit: cover;	
+}
+    
+img{
+    width: 355px; 
+    height: 200px;
+}
+
+.row2{
+    display: flex;
+    align-items: center;
+    justify-content: center;   
+}
+
+ .transfer-img{
+    width: 35%;
+    border-color:  rgb(52, 18, 85);
+    border-style: double; 
+    height:100%;
+
+   img{ width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        }
+}
+
+.chat{
+    width: 35%; 
+    border-color:  rgb(52, 18, 85);
+    border-style: double; 
+    height:100%;  
+    text-align: center;    
+}
+
+.lblmyChat{
+    justify-content: left;
+    text-align: left;
+    padding:20px;         
+
+}
+textarea, #myChat {   
+    width: 90%; 
+    height:50px;  
+}
+
+textarea{
+    height:400px;
+}
+
+.chat{
+    margin:20px;
+    font-family: "Permanent Marker", cursive;
+    color: rgb(52, 18, 85);
+    font-style: italic;
+    font-size: 20px;   
+}  
+
+.lblmyChat, #myChat{
+    margin:10px;
+}
+
+.reset, .submit{
+    margin:10px;
+    padding:5px;
+    width:100px;   
+}
+
+.Description, .reset, .submit, #myChat{
+    font-family: "Permanent Marker", cursive;
+    color: rgb(52, 18, 85);
+    font-style: italic;
+    font-size: 16px;   
+
+}
