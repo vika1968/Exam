@@ -6,15 +6,15 @@ function SmallImgTansfer (e:any) {
     let btnClicked = e.target.getAttribute('src')         
 
     //------Transfer Big Image back----------------
-        let imgBigBox = document.querySelector(".gallery-container .row2 img")
-        console.log(imgBigBox)
+        let imgBigBox = document.querySelector(".gallery-container .row2 img")       
         if (imgBigBox != null){
             bigImgTansfer() 
     }         
     //---------------------------------------------
             
     transferImg(btnClicked,".row2 .transfer-img img", "box1")                    
-    e.target.remove()           
+    e.target.remove()  
+        
 }
 
 // -------Transfer big Image from right side to left side----------------
@@ -24,13 +24,14 @@ function bigImgTansfer() {
     if (imgBigBox != null){
         let btnClicked = imgBigBox!.getAttribute('src') 
         if(btnClicked != ""){                 
-             transferImg(btnClicked!,".row1 .transfer-img img", "box2")         
+             transferImg(btnClicked!,".row2 .transfer-img img", "box2")         
         }  
     }       
  }
 
 // -------Global function that runs transferring----------------
-let transferImg = (imgSrc: string, imgToDelete: string, boxNumb: string) => {     
+let transferImg = (imgSrc: string, imgToDelete: string, boxNumb: string) => {  
+    console.log(imgToDelete)        
     if(imgToDelete !="" && imgToDelete != null){
            
         if (boxNumb == "box1"){           
@@ -49,15 +50,18 @@ let transferImg = (imgSrc: string, imgToDelete: string, boxNumb: string) => {
                 img.setAttribute("src", imgSrc)    
                 box!.appendChild (img)   
             }      
-    }
+    }//else    location.reload()
 } 
 
 // -------Remove images during transferring----------------
 let Removeimages = (str: string) => {
-    let Img =  document.querySelector(str)      
+    let Img =  document.querySelector(str) 
+   
       if (Img != null){      
         Img.remove()
-     }    
+    
+     }   
+       
 }
 
 // -----------Chat--------------

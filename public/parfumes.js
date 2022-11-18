@@ -5,7 +5,6 @@ function SmallImgTansfer(e) {
     let btnClicked = e.target.getAttribute('src');
     //------Transfer Big Image back----------------
     let imgBigBox = document.querySelector(".gallery-container .row2 img");
-    console.log(imgBigBox);
     if (imgBigBox != null) {
         bigImgTansfer();
     }
@@ -19,12 +18,13 @@ function bigImgTansfer() {
     if (imgBigBox != null) {
         let btnClicked = imgBigBox.getAttribute('src');
         if (btnClicked != "") {
-            transferImg(btnClicked, ".row1 .transfer-img img", "box2");
+            transferImg(btnClicked, ".row2 .transfer-img img", "box2");
         }
     }
 }
 // -------Global function that runs transferring----------------
 let transferImg = (imgSrc, imgToDelete, boxNumb) => {
+    console.log(imgToDelete);
     if (imgToDelete != "" && imgToDelete != null) {
         if (boxNumb == "box1") {
             Removeimages(imgToDelete);
@@ -41,7 +41,7 @@ let transferImg = (imgSrc, imgToDelete, boxNumb) => {
             img.setAttribute("src", imgSrc);
             box.appendChild(img);
         }
-    }
+    } //else    location.reload()
 };
 // -------Remove images during transferring----------------
 let Removeimages = (str) => {
