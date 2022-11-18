@@ -30,9 +30,13 @@ h1 {
     }  
 
 .row2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
     float:right;
     width: 45%;
-    display: block;
+    //display: block;
     border-color: black;
     border-style: double;
     height: 822px;        
@@ -58,11 +62,11 @@ img{
     height: 200px;
 }
 
-.row2{
-    display: flex;
-    align-items: center;
-    justify-content: center;   
-}
+// .row2{
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;   
+// }
 
  .transfer-img{
     width: 35%;

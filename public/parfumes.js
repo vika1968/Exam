@@ -1,19 +1,20 @@
 "use strict";
-let box2 = document.querySelector(".row2");
-box2.addEventListener("click", bigImgClick);
-// -------Transfer Small Image from left side to right side----------------
 let imgsSmallBox = document.querySelectorAll(".gallery-container .row1 img");
-for (let i = 0; i < imgsSmallBox.length; i++) {
-    let btnClicked = imgsSmallBox[i].getAttribute('src');
-    imgsSmallBox[i].addEventListener("click", () => {
-        if (btnClicked != "" && document.querySelector(".row2 .transfer-img img") == null) {
-            transferImg(btnClicked, ".row2 .transfer-img img", "box1");
-            imgsSmallBox[i].remove();
-        }
-    });
+imgsSmallBox.forEach(b => b.addEventListener("click", SmallImgTansfer));
+function SmallImgTansfer(e) {
+    let btnClicked = e.target.getAttribute('src');
+    //------Transfer Big Image back----------------
+    let imgBigBox = document.querySelector(".gallery-container .row2 img");
+    console.log(imgBigBox);
+    if (imgBigBox != null) {
+        bigImgTansfer();
+    }
+    //---------------------------------------------
+    transferImg(btnClicked, ".row2 .transfer-img img", "box1");
+    e.target.remove();
 }
 // -------Transfer big Image from right side to left side----------------
-function bigImgClick() {
+function bigImgTansfer() {
     let imgBigBox = document.querySelector(".gallery-container .row2 img");
     if (imgBigBox != null) {
         let btnClicked = imgBigBox.getAttribute('src');
@@ -22,7 +23,7 @@ function bigImgClick() {
         }
     }
 }
-// -------Function that runs transferring----------------
+// -------Global function that runs transferring----------------
 let transferImg = (imgSrc, imgToDelete, boxNumb) => {
     if (imgToDelete != "" && imgToDelete != null) {
         if (boxNumb == "box1") {
