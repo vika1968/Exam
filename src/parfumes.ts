@@ -1,25 +1,24 @@
+ 
+let imgsSmallBox  =  document.querySelectorAll(".gallery-container .row1 img") 
+imgsSmallBox.forEach(b => b.addEventListener("click", SmallImgTansfer)) 
 
-let box2 = document.querySelector(".row2") as HTMLDivElement
-box2.addEventListener("click", bigImgClick) 
+function SmallImgTansfer (e:any) {            
+    let btnClicked = e.target.getAttribute('src')         
 
-
-// -------Transfer Small Image from left side to right side----------------
-let imgsSmallBox = document.querySelectorAll(".gallery-container .row1 img")
-for(let i = 0; i < imgsSmallBox.length; i++){
-    let btnClicked = imgsSmallBox[i]!.getAttribute('src') 
-
-    imgsSmallBox[i].addEventListener("click", ()=>{
-      
-    if(btnClicked != "" && document.querySelector(".row2 .transfer-img img") == null){  
-                   
-        transferImg(btnClicked!,".row2 .transfer-img img", "box1")                    
-         imgsSmallBox[i].remove()           
-        }            
-    }) 
+    //------Transfer Big Image back----------------
+        let imgBigBox = document.querySelector(".gallery-container .row2 img")
+        console.log(imgBigBox)
+        if (imgBigBox != null){
+            bigImgTansfer() 
+    }         
+    //---------------------------------------------
+            
+    transferImg(btnClicked,".row2 .transfer-img img", "box1")                    
+    e.target.remove()           
 }
 
 // -------Transfer big Image from right side to left side----------------
-function bigImgClick() {      
+function bigImgTansfer() {      
     let imgBigBox = document.querySelector(".gallery-container .row2 img")
   
     if (imgBigBox != null){
@@ -30,7 +29,7 @@ function bigImgClick() {
     }       
  }
 
-// -------Function that runs transferring----------------
+// -------Global function that runs transferring----------------
 let transferImg = (imgSrc: string, imgToDelete: string, boxNumb: string) => {     
     if(imgToDelete !="" && imgToDelete != null){
            
@@ -54,7 +53,6 @@ let transferImg = (imgSrc: string, imgToDelete: string, boxNumb: string) => {
 } 
 
 // -------Remove images during transferring----------------
-
 let Removeimages = (str: string) => {
     let Img =  document.querySelector(str)      
       if (Img != null){      
@@ -62,9 +60,7 @@ let Removeimages = (str: string) => {
      }    
 }
 
-
 // -----------Chat--------------
-
 let form = document.querySelector(".form") as HTMLElement
 form.addEventListener("click", addChat) 
 
