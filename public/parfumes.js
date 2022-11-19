@@ -1,24 +1,24 @@
 "use strict";
-let imgsSmallBox = document.querySelectorAll(".gallery-container .row1 img");
+let imgsSmallBox = document.querySelectorAll(".gallery-container .box1 img");
 imgsSmallBox.forEach(b => b.addEventListener("click", SmallImgTansfer));
 function SmallImgTansfer(e) {
     let btnClicked = e.target.getAttribute('src');
     //------Transfer Big Image back----------------
-    let imgBigBox = document.querySelector(".gallery-container .row2 img");
+    let imgBigBox = document.querySelector(".gallery-container .box2 img");
     if (imgBigBox != null) {
         bigImgTansfer();
     }
     //---------------------------------------------
-    transferImg(btnClicked, ".row2 .transfer-img img", "box1");
+    transferImg(btnClicked, ".box2 .transfer-img img", "box1");
     e.target.remove();
 }
 // -------Transfer big Image from right side to left side----------------
 function bigImgTansfer() {
-    let imgBigBox = document.querySelector(".gallery-container .row2 img");
+    let imgBigBox = document.querySelector(".gallery-container .box2 img");
     if (imgBigBox != null) {
         let btnClicked = imgBigBox.getAttribute('src');
         if (btnClicked != "") {
-            transferImg(btnClicked, ".row2 .transfer-img img", "box2");
+            transferImg(btnClicked, ".box2 .transfer-img img", "box2");
         }
     }
 }
@@ -27,7 +27,7 @@ let transferImg = (imgSrc, imgToDelete, boxNumb) => {
     console.log(imgToDelete);
     if (imgToDelete != "" && imgToDelete != null) {
         if (boxNumb == "box1") {
-            Removeimages(imgToDelete);
+            RemoveImages(imgToDelete);
             let boxToreplace = ".transfer-img";
             let box = document.querySelector(boxToreplace);
             let img = document.createElement("img");
@@ -35,8 +35,8 @@ let transferImg = (imgSrc, imgToDelete, boxNumb) => {
             box.appendChild(img);
         }
         else {
-            Removeimages(".row2 .transfer-img img");
-            let box = document.querySelector(".row1 #id_div_img" + imgSrc.replace(/\D/g, ''));
+            RemoveImages(".box2 .transfer-img img");
+            let box = document.querySelector(".box1 #id_div_img" + imgSrc.replace(/\D/g, ''));
             let img = document.createElement("img");
             img.setAttribute("src", imgSrc);
             box.appendChild(img);
@@ -44,7 +44,7 @@ let transferImg = (imgSrc, imgToDelete, boxNumb) => {
     } //else    location.reload()
 };
 // -------Remove images during transferring----------------
-let Removeimages = (str) => {
+let RemoveImages = (str) => {
     let Img = document.querySelector(str);
     if (Img != null) {
         Img.remove();
