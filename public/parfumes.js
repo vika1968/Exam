@@ -28,20 +28,20 @@ let transferImg = (imgSrc, imgToDelete, boxNumb) => {
     if (imgToDelete != "" && imgToDelete != null) {
         if (boxNumb == "box1") {
             RemoveImages(imgToDelete);
-            let boxToreplace = ".transfer-img";
-            let box = document.querySelector(boxToreplace);
+            let div = document.querySelector(".transfer-img");
             let img = document.createElement("img");
             img.setAttribute("src", imgSrc);
-            box.appendChild(img);
+            div.appendChild(img);
         }
         else {
             RemoveImages(".box2 .transfer-img img");
-            let box = document.querySelector(".box1 #id_div_img" + imgSrc.replace(/\D/g, ''));
+            let div = document.querySelector(".box1 #id_div_img" + imgSrc.replace(/\D/g, ''));
             let img = document.createElement("img");
             img.setAttribute("src", imgSrc);
-            box.appendChild(img);
+            div.appendChild(img);
+            img.addEventListener("click", SmallImgTansfer);
         }
-    } //else    location.reload()
+    }
 };
 // -------Remove images during transferring----------------
 let RemoveImages = (str) => {
